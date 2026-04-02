@@ -1,0 +1,89 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="640" y1="0" x2="640" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08192F"/>
+      <stop offset="1" stop-color="#03060C"/>
+    </linearGradient>
+    <radialGradient id="auraA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(956 112) rotate(134.219) scale(481.083 585.716)">
+      <stop stop-color="#7ED6E7" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#7ED6E7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auraB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 100) rotate(58.264) scale(432.676 531.048)">
+      <stop stop-color="#E8C88A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#E8C88A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="78" y1="62" x2="1143" y2="643" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#182D54"/>
+      <stop offset="1" stop-color="#09111C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" rx="30" fill="url(#bg)"/>
+  <rect width="1280" height="720" rx="30" fill="url(#auraA)"/>
+  <rect width="1280" height="720" rx="30" fill="url(#auraB)"/>
+
+  <g opacity="0.9">
+    <circle cx="92" cy="86" r="2" fill="#FFFFFF"/>
+    <circle cx="154" cy="132" r="1.6" fill="#FFFFFF"/>
+    <circle cx="232" cy="80" r="1.5" fill="#FFFFFF"/>
+    <circle cx="1133" cy="102" r="2" fill="#FFFFFF"/>
+    <circle cx="1203" cy="158" r="1.6" fill="#FFFFFF"/>
+    <circle cx="1041" cy="581" r="2" fill="#FFFFFF"/>
+    <circle cx="1181" cy="531" r="1.6" fill="#FFFFFF"/>
+    <circle cx="212" cy="586" r="2" fill="#FFFFFF"/>
+  </g>
+
+  <rect x="58" y="52" width="1164" height="616" rx="38" fill="url(#glass)" stroke="#FFFFFF" stroke-opacity="0.14"/>
+
+  <circle cx="1006" cy="148" r="56" fill="#E8C88A" fill-opacity="0.14" stroke="#E8C88A" stroke-opacity="0.45"/>
+  <path d="M1006 108C1021 133 1021 164 1006 188C1034 182 1056 156 1056 123C1056 118 1055 113 1054 108H1006Z" fill="#E8C88A"/>
+
+  <text x="112" y="150" fill="#7ED6E7" font-family="Georgia, serif" font-size="20" letter-spacing="5">GESTURE TAROT GAME</text>
+  <text x="112" y="250" fill="#F8E8C1" font-family="Georgia, serif" font-size="94" font-weight="700">Starry Tarot</text>
+  <text x="112" y="318" fill="#E7D7B5" font-family="Georgia, serif" font-size="32">Swipe the deck. Pinch to draw. Read a spread that changes every time.</text>
+
+  <g transform="translate(112 388)">
+    <rect width="166" height="48" rx="24" fill="#E8C88A" fill-opacity="0.16" stroke="#E8C88A" stroke-opacity="0.5"/>
+    <text x="36" y="31" fill="#F8E8C1" font-family="Georgia, serif" font-size="24">22 cards</text>
+  </g>
+  <g transform="translate(294 388)">
+    <rect width="208" height="48" rx="24" fill="#7ED6E7" fill-opacity="0.12" stroke="#7ED6E7" stroke-opacity="0.45"/>
+    <text x="28" y="31" fill="#D9F7FC" font-family="Georgia, serif" font-size="24">no repeat draws</text>
+  </g>
+  <g transform="translate(518 388)">
+    <rect width="220" height="48" rx="24" fill="#E8C88A" fill-opacity="0.16" stroke="#E8C88A" stroke-opacity="0.5"/>
+    <text x="30" y="31" fill="#F8E8C1" font-family="Georgia, serif" font-size="24">living readings</text>
+  </g>
+
+  <g transform="translate(808 186)">
+    <g transform="rotate(-14 112 176)">
+      <rect x="0" y="26" width="224" height="356" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <rect x="20" y="46" width="184" height="316" rx="22" stroke="#7ED6E7" stroke-opacity="0.42"/>
+      <circle cx="112" cy="148" r="56" stroke="#E8C88A" stroke-width="3"/>
+      <path d="M112 92V204M56 148H168" stroke="#F8E8C1" stroke-width="2.4"/>
+      <path d="M112 109L129 138L161 146L136 169L142 203L112 186L82 203L88 169L63 146L95 138L112 109Z" stroke="#7ED6E7" stroke-width="2.2"/>
+      <text x="112" y="273" text-anchor="middle" fill="#F8E8C1" font-family="Georgia, serif" font-size="26">PINCH</text>
+      <text x="112" y="307" text-anchor="middle" fill="#7ED6E7" font-family="Georgia, serif" font-size="22">to draw</text>
+    </g>
+    <g transform="translate(162 26) rotate(10 112 176)">
+      <rect x="0" y="18" width="224" height="356" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <rect x="20" y="38" width="184" height="316" rx="22" stroke="#E8C88A" stroke-opacity="0.36"/>
+      <circle cx="112" cy="148" r="46" stroke="#7ED6E7" stroke-width="3"/>
+      <path d="M112 96C127 119 127 178 112 200C95 178 95 119 112 96Z" stroke="#F8E8C1" stroke-width="2.4"/>
+      <path d="M75 186C92 173 132 173 149 186" stroke="#E8C88A" stroke-width="2.4"/>
+      <text x="112" y="272" text-anchor="middle" fill="#F8E8C1" font-family="Georgia, serif" font-size="26">REVEAL</text>
+      <text x="112" y="306" text-anchor="middle" fill="#E8C88A" font-family="Georgia, serif" font-size="22">the spread</text>
+    </g>
+  </g>
+
+  <g opacity="0.5">
+    <path d="M889 549C939 505 1006 497 1058 530" stroke="#7ED6E7" stroke-width="2"/>
+    <path d="M940 566C995 530 1057 530 1101 565" stroke="#E8C88A" stroke-width="2"/>
+    <circle cx="996" cy="532" r="5" fill="#F8E8C1"/>
+    <circle cx="1049" cy="547" r="5" fill="#D9F7FC"/>
+  </g>
+</svg>

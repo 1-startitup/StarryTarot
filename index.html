@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starry Tarot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+</head>
+<body data-mode="general">
+  <div id="app-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="ui-overlay">
+      <div id="mode-selector">
+        <div class="menu-panel panel">
+          <p class="eyebrow">Gesture-controlled tarot experience</p>
+          <h1 class="ornate-title">Starry Tarot</h1>
+          <p class="menu-copy">
+            Browse the deck with your hand, hold a pinch to choose each card, and receive a
+            three-card reading written from the exact spread you draw.
+          </p>
+
+          <div class="mode-grid">
+            <button onclick="preInit('general')" class="mode-card">
+              <span class="mode-card-title">General Reading</span>
+              <span class="mode-card-copy">
+                Past, present, future guidance for direction, work, personal energy, and next steps.
+              </span>
+            </button>
+
+            <button onclick="preInit('romance')" class="mode-card mode-card-romance">
+              <span class="mode-card-title">Romance Reading</span>
+              <span class="mode-card-copy">
+                Read your heart, their energy, and what the relationship is most likely becoming.
+              </span>
+            </button>
+          </div>
+
+          <div class="note-row">
+            <span class="note-pill">22 major arcana cards</span>
+            <span class="note-pill">No repeat cards in one spread</span>
+            <span class="note-pill">Clear, readable interpretation</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="hud-layer" style="display:none">
+        <div id="hud-shell">
+          <div class="status-panel panel">
+            <p id="mode-badge" class="eyebrow mode-badge">General Reading</p>
+            <h2 id="status-text">Swipe to browse the deck</h2>
+            <p id="status-subtext">
+              Hold a pinch on the glowing front card to lock in your first card.
+            </p>
+          </div>
+
+          <div id="spread-slots">
+            <div class="slot active" id="slot-0">
+              <div class="slot-inner">
+                <span class="slot-step">01</span>
+                <span class="slot-label" id="label-0">PAST</span>
+                <span class="slot-value" id="slot-value-0">Waiting</span>
+              </div>
+            </div>
+
+            <div class="slot" id="slot-1">
+              <div class="slot-inner">
+                <span class="slot-step">02</span>
+                <span class="slot-label" id="label-1">PRESENT</span>
+                <span class="slot-value" id="slot-value-1">Waiting</span>
+              </div>
+            </div>
+
+            <div class="slot" id="slot-2">
+              <div class="slot-inner">
+                <span class="slot-step">03</span>
+                <span class="slot-label" id="label-2">FUTURE</span>
+                <span class="slot-value" id="slot-value-2">Waiting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="final-reveal" class="reveal-overlay" style="display:none">
+        <div class="reveal-header">
+          <p id="reveal-kicker" class="eyebrow">Three-card reading</p>
+          <h2 class="reveal-title" id="reveal-title">Your reading</h2>
+          <p class="reading-summary" id="reading-summary"></p>
+        </div>
+
+        <div class="card-row" id="reveal-card-row"></div>
+
+        <div class="reading-layout">
+          <section class="reading-panel">
+            <h3>How the spread reads</h3>
+            <div id="final-narrative" class="paragraph-stack"></div>
+          </section>
+
+          <section class="reading-panel action-panel">
+            <h3>Practical takeaway</h3>
+            <p id="final-advice"></p>
+
+            <div class="reflection-box">
+              <h4>Reflection prompt</h4>
+              <p id="final-reflection"></p>
+            </div>
+
+            <div class="button-row-final">
+              <button onclick="location.reload()" class="btn-fancy">Draw Again</button>
+              <button onclick="location.reload()" class="btn-fancy btn-secondary">Change Mode</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div id="camera-window" style="display:none">
+        <p class="camera-label">Gesture Mirror</p>
+        <video id="input_video" style="display:none" playsinline></video>
+        <canvas id="output_canvas" width="180" height="135"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

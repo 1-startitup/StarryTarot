@@ -1,0 +1,74 @@
+<svg width="1280" height="760" viewBox="0 0 1280 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="640" y1="0" x2="640" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071222"/>
+      <stop offset="1" stop-color="#04070D"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="72" y1="62" x2="1188" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#192D52"/>
+      <stop offset="1" stop-color="#09111B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" rx="30" fill="url(#bg)"/>
+  <rect x="56" y="44" width="1168" height="672" rx="36" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.14"/>
+
+  <text x="92" y="116" fill="#7ED6E7" font-family="Georgia, serif" font-size="20" letter-spacing="4">GITHUB SHOWCASE</text>
+  <text x="92" y="182" fill="#F8E8C1" font-family="Georgia, serif" font-size="58" font-weight="700">Three moments from the game</text>
+
+  <g transform="translate(86 248)">
+    <rect width="348" height="388" rx="30" fill="#0A1321" stroke="#22334E"/>
+    <text x="28" y="48" fill="#E8C88A" font-family="Georgia, serif" font-size="24">Swipe</text>
+    <text x="28" y="82" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">Browse a floating ring of cards.</text>
+    <ellipse cx="174" cy="224" rx="118" ry="42" stroke="#7ED6E7" stroke-opacity="0.28"/>
+    <ellipse cx="174" cy="224" rx="88" ry="30" stroke="#E8C88A" stroke-opacity="0.28"/>
+    <g transform="translate(70 142)">
+      <g transform="rotate(-18 64 98)">
+        <rect width="128" height="196" rx="20" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.14"/>
+      </g>
+      <g transform="translate(58 10)">
+        <rect width="128" height="196" rx="20" fill="url(#card)" stroke="#E8C88A" stroke-opacity="0.38"/>
+        <circle cx="64" cy="78" r="28" stroke="#E8C88A" stroke-width="2.4"/>
+        <path d="M64 50L72 68L92 70L78 83L82 103L64 93L46 103L50 83L36 70L56 68L64 50Z" stroke="#7ED6E7" stroke-width="2"/>
+      </g>
+      <g transform="translate(116 22) rotate(14 64 98)">
+        <rect width="128" height="196" rx="20" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.14"/>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(466 248)">
+    <rect width="348" height="388" rx="30" fill="#0A1321" stroke="#22334E"/>
+    <text x="28" y="48" fill="#E8C88A" font-family="Georgia, serif" font-size="24">Choose</text>
+    <text x="28" y="82" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">Pinch the glowing front card.</text>
+    <circle cx="174" cy="212" r="88" fill="#E8C88A" fill-opacity="0.08"/>
+    <rect x="94" y="116" width="160" height="252" rx="24" fill="url(#card)" stroke="#E8C88A" stroke-opacity="0.5"/>
+    <rect x="110" y="132" width="128" height="220" rx="18" stroke="#7ED6E7" stroke-opacity="0.38"/>
+    <circle cx="174" cy="216" r="40" stroke="#E8C88A" stroke-width="3"/>
+    <path d="M174 180V252M138 216H210" stroke="#F8E8C1" stroke-width="2.4"/>
+    <circle cx="174" cy="216" r="62" stroke="#F8E8C1" stroke-width="4" stroke-dasharray="12 16"/>
+    <text x="174" y="334" text-anchor="middle" fill="#F8E8C1" font-family="Georgia, serif" font-size="24">hold to draw</text>
+  </g>
+
+  <g transform="translate(846 248)">
+    <rect width="348" height="388" rx="30" fill="#0A1321" stroke="#22334E"/>
+    <text x="28" y="48" fill="#E8C88A" font-family="Georgia, serif" font-size="24">Reveal</text>
+    <text x="28" y="82" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">Read a spread that changes with the cards.</text>
+    <rect x="34" y="122" width="280" height="198" rx="24" fill="#101A2A" stroke="#22334E"/>
+    <text x="56" y="168" fill="#F8E8C1" font-family="Georgia, serif" font-size="28">The spread says:</text>
+    <text x="56" y="212" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">Take the truth seriously.</text>
+    <text x="56" y="246" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">The future grows lighter</text>
+    <text x="56" y="280" fill="#DCCCA8" font-family="Georgia, serif" font-size="24">when the present is faced.</text>
+    <circle cx="274" cy="166" r="24" fill="#7ED6E7" fill-opacity="0.18" stroke="#7ED6E7" stroke-opacity="0.4"/>
+    <path d="M274 146L279 160H294L282 169L286 183L274 175L262 183L266 169L254 160H269L274 146Z" fill="#F8E8C1"/>
+    <g transform="translate(38 340)">
+      <rect width="84" height="12" rx="6" fill="#E8C88A" fill-opacity="0.7"/>
+      <rect x="96" width="72" height="12" rx="6" fill="#7ED6E7" fill-opacity="0.6"/>
+      <rect x="180" width="102" height="12" rx="6" fill="#E8C88A" fill-opacity="0.45"/>
+    </g>
+  </g>
+</svg>
