@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
@@ -19,33 +19,72 @@
     <div id="ui-overlay">
       <div id="mode-selector">
         <div class="menu-panel panel">
-          <p class="eyebrow">Gesture-controlled tarot experience</p>
+          <div class="menu-topbar">
+            <p class="eyebrow" id="menu-eyebrow">Gesture-guided tarot reading</p>
+            <div class="language-selector" aria-label="Language selection">
+              <button type="button" id="lang-en" class="lang-chip active" onclick="setLanguage('en')">English</button>
+              <button type="button" id="lang-zh" class="lang-chip" onclick="setLanguage('zh')">中文</button>
+            </div>
+          </div>
           <h1 class="ornate-title">Starry Tarot</h1>
-          <p class="menu-copy">
-            Browse the deck with your hand, hold a pinch to choose each card, and receive a
-            three-card reading written from the exact spread you draw.
+          <p class="menu-copy" id="menu-copy">
+            Move your hand to browse the deck. Pinch to choose each card. Draw three cards to get a
+            short reading based on the exact spread you pulled.
           </p>
+
+          <div class="deck-selector" aria-label="Deck selection">
+            <button type="button" id="deck-major" class="deck-chip" onclick="setDeckMode('major')">
+              Major Arcana
+            </button>
+            <button type="button" id="deck-full" class="deck-chip active" onclick="setDeckMode('full')">
+              Full Tarot
+            </button>
+          </div>
+
+          <p class="deck-copy" id="deck-copy">
+            Full Tarot includes all 56 minor arcana, so the reading can be more specific and less repetitive.
+          </p>
+
+          <p class="legal-note" id="legal-note">
+            For amusement only. Tarot is not legal, medical, financial, or mental health advice.
+          </p>
+
+          <div class="guide-row">
+            <div class="guide-card">
+              <p class="guide-title" id="guide-title-0">1. Move Your Hand</p>
+              <p class="guide-copy" id="guide-copy-0">Sweep left or right to browse the deck.</p>
+            </div>
+            <div class="guide-card">
+              <p class="guide-title" id="guide-title-1">2. Pinch To Draw</p>
+              <p class="guide-copy" id="guide-copy-1">Hold a clear thumb-to-index pinch on the front card.</p>
+            </div>
+            <div class="guide-card">
+              <p class="guide-title" id="guide-title-2">3. Ask Your Question</p>
+              <p class="guide-copy" id="guide-copy-2">Use the final spread to ask about your dilemma.</p>
+            </div>
+          </div>
 
           <div class="mode-grid">
             <button onclick="preInit('general')" class="mode-card">
-              <span class="mode-card-title">General Reading</span>
-              <span class="mode-card-copy">
+              <span class="mode-card-title" id="mode-card-title-general">General Reading</span>
+              <span class="mode-card-copy" id="mode-card-copy-general">
                 Past, present, future guidance for direction, work, personal energy, and next steps.
               </span>
             </button>
 
             <button onclick="preInit('romance')" class="mode-card mode-card-romance">
-              <span class="mode-card-title">Romance Reading</span>
-              <span class="mode-card-copy">
+              <span class="mode-card-title" id="mode-card-title-romance">Romance Reading</span>
+              <span class="mode-card-copy" id="mode-card-copy-romance">
                 Read your heart, their energy, and what the relationship is most likely becoming.
               </span>
             </button>
           </div>
 
           <div class="note-row">
-            <span class="note-pill">22 major arcana cards</span>
-            <span class="note-pill">No repeat cards in one spread</span>
-            <span class="note-pill">Clear, readable interpretation</span>
+            <span class="note-pill" id="deck-count-pill">78-card full deck</span>
+            <span class="note-pill" id="note-pill-0">No repeat cards in one spread</span>
+            <span class="note-pill" id="note-pill-1">Wrap-around swipe support</span>
+            <span class="note-pill" id="note-pill-2">Clear, readable interpretation</span>
           </div>
         </div>
       </div>
@@ -99,29 +138,53 @@
 
         <div class="reading-layout">
           <section class="reading-panel">
-            <h3>How the spread reads</h3>
+            <h3 id="spread-heading">How the spread reads</h3>
             <div id="final-narrative" class="paragraph-stack"></div>
           </section>
 
-          <section class="reading-panel action-panel">
-            <h3>Practical takeaway</h3>
-            <p id="final-advice"></p>
+          <section class="reading-panel action-panel oracle-panel">
+            <h3 id="oracle-heading">Ask the Cards</h3>
+            <p class="oracle-copy" id="oracle-copy">
+              Feeling confused or stuck? Ask one clear question about your current dilemma and the
+              cards will answer based on the spread you drew.
+            </p>
 
-            <div class="reflection-box">
-              <h4>Reflection prompt</h4>
-              <p id="final-reflection"></p>
+            <div class="oracle-prompt-row">
+              <button type="button" class="prompt-chip" id="prompt-chip-0">
+                What am I missing?
+              </button>
+              <button type="button" class="prompt-chip" id="prompt-chip-1">
+                Move forward or pause?
+              </button>
+              <button type="button" class="prompt-chip" id="prompt-chip-2">
+                Healthiest next step
+              </button>
+            </div>
+
+            <label class="oracle-label" for="oracle-question" id="oracle-label">Your question</label>
+            <textarea
+              id="oracle-question"
+              class="oracle-input"
+              placeholder="Example: Should I stay in this job, or is it time to move on?"
+            ></textarea>
+            <button type="button" id="ask-oracle" class="btn-fancy">Ask the Cards</button>
+
+            <div class="oracle-response-box" id="oracle-response">
+              <p class="oracle-placeholder">
+                Ask about your confusion, and the spread will answer in plain language.
+              </p>
             </div>
 
             <div class="button-row-final">
-              <button onclick="location.reload()" class="btn-fancy">Draw Again</button>
-              <button onclick="location.reload()" class="btn-fancy btn-secondary">Change Mode</button>
+              <button onclick="location.reload()" class="btn-fancy" id="draw-again-btn">Draw Again</button>
+              <button onclick="location.reload()" class="btn-fancy btn-secondary" id="change-mode-btn">Change Mode</button>
             </div>
           </section>
         </div>
       </div>
 
       <div id="camera-window" style="display:none">
-        <p class="camera-label">Gesture Mirror</p>
+        <p class="camera-label" id="camera-label">Gesture Skeleton</p>
         <video id="input_video" style="display:none" playsinline></video>
         <canvas id="output_canvas" width="180" height="135"></canvas>
       </div>
